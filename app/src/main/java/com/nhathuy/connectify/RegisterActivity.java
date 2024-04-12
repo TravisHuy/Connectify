@@ -131,7 +131,7 @@ public class RegisterActivity extends AppCompatActivity {
                     binding.signupEmailCheck.setAnimation(R.raw.loading);
                     binding.signupEmailCheck.playAnimation();
                     if(isEmailValid(binding.signupEmailEdittext.getText().toString())){
-                        isCheckEmail(binding.signupUsernameEdittext.getText().toString(), new OnEmailCheckListener() {
+                        isCheckEmail(binding.signupEmailEdittext.getText().toString(), new OnEmailCheckListener() {
                             @Override
                             public void onSuccess(boolean isRegistered) {
                                 if(isRegistered){
@@ -159,18 +159,18 @@ public class RegisterActivity extends AppCompatActivity {
             public boolean onEditorAction(TextView tv, int actionId, KeyEvent keyEvent) {
                 if (actionId==EditorInfo.IME_ACTION_NEXT){
                     binding.signupUsernameCheck.setAnimation(R.raw.loading);
-                    binding.signupEmailCheck.playAnimation();
+                    binding.signupUsernameCheck.playAnimation();
                     if(binding.signupUsernameEdittext.getText().length()>0){
                         isCheckName(binding.signupUsernameEdittext.getText().toString(), new OnUserNameCheckListener() {
                             @Override
                             public void onSuccess(boolean isRegistered) {
                                 if(isRegistered){
                                     binding.signupUsernameCheck.setAnimation(R.raw.error);
-                                    binding.signupEmailCheck.playAnimation();
+                                    binding.signupUsernameCheck.playAnimation();
                                 }
                                 else{
                                     binding.signupUsernameCheck.setAnimation(R.raw.success_check);
-                                    binding.signupEmailCheck.playAnimation();
+                                    binding.signupUsernameCheck.playAnimation();
                                 }
                             }
                         });

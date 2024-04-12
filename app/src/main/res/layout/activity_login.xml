@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -37,7 +37,7 @@
         android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_logo" />
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_email_input"
         android:layout_width="match_parent"
@@ -60,15 +60,14 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/login_email_check"
         android:layout_width="22dp"
         android:layout_height="22dp"
+        android:layout_marginEnd="5dp"
         android:scaleType="centerCrop"
-        android:layout_marginEnd="40dp"
         app:layout_constraintBottom_toBottomOf="@+id/login_email_input"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/login_email_input"
-        app:layout_constraintStart_toEndOf="@+id/login_email_input"
-        />
+        app:layout_constraintEnd_toEndOf="@+id/login_email_input"
+        app:layout_constraintTop_toTopOf="@+id/login_email_input" />
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/login_password_input"
         android:layout_width="match_parent"
@@ -81,19 +80,28 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         app:layout_constraintTop_toBottomOf="@+id/login_email_input">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_password_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:inputType="textPassword"
-            />
+            android:textStyle="bold" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/login_password_check"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginEnd="5dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/login_password_input"
+        app:layout_constraintEnd_toEndOf="@+id/login_password_input"
+        app:layout_constraintTop_toTopOf="@+id/login_password_input" />
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/login_checkbox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_marginStart="18dp"
         android:layout_marginTop="14dp"
         android:scaleType="centerCrop"
@@ -103,19 +111,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_password_input"
         />
-    
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:fontFamily="@font/amita"
-        android:layout_marginStart="5dp"
-        android:textColor="@color/colorAccentBlueDark"
-        android:layout_marginTop="10dp"
         android:text="@string/remember_me"
-        app:layout_constraintStart_toStartOf="@+id/login_checkbox"
-        app:layout_constraintTop_toBottomOf="@+id/login_password_input"
-        />
+        android:textColor="@color/colorAccentBlueDark"
+        app:layout_constraintStart_toEndOf="@+id/login_checkbox"
+        app:layout_constraintTop_toTopOf="@+id/login_checkbox" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_signup"

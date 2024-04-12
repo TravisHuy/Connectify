@@ -34,7 +34,7 @@ public class SplashActivity extends AppCompatActivity {
                     startActivity(new Intent(SplashActivity.this,MainActivity.class));
                 }
                 else{
-                    Intent intent=new Intent(SplashActivity.this,RegisterActivity.class);
+                    Intent intent=new Intent(SplashActivity.this,LoginActivity.class);
                     super.onAnimationEnd(animation);
                     View sharedView=animationView;
                     String transName="slap_anim";
