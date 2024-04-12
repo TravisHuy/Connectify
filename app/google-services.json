@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "392039216106",
+    "project_id": "tribeshare-3251d",
+    "storage_bucket": "tribeshare-3251d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392039216106:android:4b706a504052119ac4f893",
+        "android_client_info": {
+          "package_name": "com.nhathuy.connectify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7jyk3Nq99ElxOhwKHyzmpl2XpbEGU0DM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:392039216106:android:7c8a869f1a31ef44c4f893",
+        "android_client_info": {
+          "package_name": "com.nhathuy.tribeshare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7jyk3Nq99ElxOhwKHyzmpl2XpbEGU0DM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
