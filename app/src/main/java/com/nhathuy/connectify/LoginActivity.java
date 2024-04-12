@@ -28,18 +28,19 @@ import com.nhathuy.connectify.databinding.ActivityLoginBinding;
 public class LoginActivity extends AppCompatActivity {
     private ActivityLoginBinding binding;
     private FirebaseAuth mAuth;
-    private FirebaseFirestore mDb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding=ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        EmojiCompat.Config config = new BundledEmojiCompatConfig(this);
+        EmojiCompat.init(config);
+
         Window w=getWindow();
         w.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
-        EmojiCompat.Config config = new BundledEmojiCompatConfig(this);
-        EmojiCompat.init(config);
+
 
         mAuth=FirebaseAuth.getInstance();
 
@@ -47,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
         binding.btnSignup.setOnClickListener(v->{
             if(isEmailCheck(binding.loginEmailEdittext.getText().toString())){
                 if(binding.loginPasswordEdittext.getText().length()>5){
-                    acceptLogin(binding.loginEmailEdittext.toString(),binding.loginPasswordEdittext.toString());
+                    acceptLogin(binding.loginEmailEdittext.getText().toString(),binding.loginPasswordEdittext.getText().toString());
                 }
                 else{
                     binding.loginPasswordEdittext.setError("Enter valid password");
@@ -61,7 +62,10 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         binding.tvLoginToSignUp.setOnClickListener(v->{
-            startActivity(new Intent(this,RegisterActivity.class));
+            Intent intent=new Intent(LoginActivity.this,RegisterActivity.class);
+            String transName="splash_anim";
+            ActivityOptions activityOptions=ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this,binding.tvLogo,transName);
+            startActivity(intent,activityOptions.toBundle());
         });
 
         binding.loginCheckbox.setOnClickListener(v->{
@@ -69,12 +73,6 @@ public class LoginActivity extends AppCompatActivity {
             binding.loginCheckbox.setRepeatMode(LottieDrawable.REVERSE);
         });
 
-        binding.tvLoginToSignUp.setOnClickListener(v->{
-            Intent intent=new Intent(LoginActivity.this,RegisterActivity.class);
-            String transName="splash_amin";
-            ActivityOptions activityOptions=ActivityOptions.makeSceneTransitionAnimation(LoginActivity.this,binding.tvLogo,transName);
-            startActivity(intent,activityOptions.toBundle());
-        });
     }
 
     private void acceptLogin(String email, String password) {
