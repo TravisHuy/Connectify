@@ -12,14 +12,17 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.airbnb.lottie.LottieAnimationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class SplashActivity extends AppCompatActivity {
     private LottieAnimationView animationView;
+    private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        mAuth=FirebaseAuth.getInstance();
 
         animationView=findViewById(R.id.splash_anim);
         Window w=getWindow();
@@ -27,12 +30,17 @@ public class SplashActivity extends AppCompatActivity {
         animationView.addAnimatorListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationEnd(Animator animation) {
-                Intent intent=new Intent(SplashActivity.this,MainActivity.class);
-                super.onAnimationEnd(animation);
-                View sharedView=animationView;
-                String transName="slap_anim";
-                ActivityOptions activityOptions=ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this,sharedView,transName);
-                startActivity(intent,activityOptions.toBundle());
+                if(mAuth.getCurrentUser()!=null){
+                    startActivity(new Intent(SplashActivity.this,MainActivity.class));
+                }
+                else{
+                    Intent intent=new Intent(SplashActivity.this,RegisterActivity.class);
+                    super.onAnimationEnd(animation);
+                    View sharedView=animationView;
+                    String transName="slap_anim";
+                    ActivityOptions activityOptions=ActivityOptions.makeSceneTransitionAnimation(SplashActivity.this,sharedView,transName);
+                    startActivity(intent,activityOptions.toBundle());
+                }
             }
 
             @Override
