@@ -1,28 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/background"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tv"
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/container"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+
+    </LinearLayout>
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:id="@+id/app_bar"
+        android:layout_height="wrap_content">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:titleTextColor="@color/colorPrimaryDark"
+            android:background="?attr/backgroundColor"
+            app:layout_scrollFlags="scroll||enterAlways|snap"
+            />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ProgressBar
+        android:id="@+id/progess"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <Button
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="Logout"
-        app:layout_constraintTop_toBottomOf="@+id/tv"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        style="@style/SpinKitView.Large.DoubleBounce"
         />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.gauravk.bubblenavigation.BubbleNavigationLinearView
+        android:id="@+id/bottom_navigation_linear_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:elevation="8dp"
+        android:padding="8dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
+        >
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_icon="@drawable/home"
+            app:bt_colorActive="@color/colorAccent"
+            app:bt_colorInactive="@color/colorAccentBlueDark_50"
+            app:bt_title="Home"
+            />
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_icon="@drawable/post"
+            app:bt_title="Post"
+            app:bt_active="true"
+            app:bt_colorInactive="@color/colorAccentBlueDark_50"
+            />
+        <com.gauravk.bubblenavigation.BubbleToggleView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_icon="@drawable/chat"
+            app:bt_title="Chat"
+            app:bt_active="true"
+            app:bt_colorInactive="@color/colorAccentBlueDark_50"
+            />
+
+    </com.gauravk.bubblenavigation.BubbleNavigationLinearView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
