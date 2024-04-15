@@ -34,7 +34,7 @@ public interface PostDao {
      List<Post> findAllByPostId(int postId);
 
      @Query("select *from post order by postId asc")
-     LiveData<Post> findLiveData();
+     LiveData<List<Post>> findLiveData();
      @Query("select * from post")
      List<Post> findAll();
 

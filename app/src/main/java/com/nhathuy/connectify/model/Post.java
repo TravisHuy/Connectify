@@ -6,6 +6,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.BaseObservable;
+import androidx.databinding.Bindable;
 import androidx.databinding.BindingAdapter;
 import androidx.palette.graphics.Palette;
 import androidx.room.Entity;
@@ -19,6 +20,8 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.target.Target;
 import com.nhathuy.connectify.R;
 
+import java.util.List;
+
 
 @Entity
 public class Post extends BaseObservable {
@@ -31,10 +34,13 @@ public class Post extends BaseObservable {
     private int postCommentsNum;
     private String postImage;
     private String postDec;
-    private boolean like;
-    private boolean dislike;
+    private int like;
+    private int dislike;
+    private boolean liked;
+    private boolean disliked;
     private boolean hasImage;
-
+    private List<String> likes_list;
+    private List<String> dislikes_list;
 
     public static void loadPostAuthImage(ImageView authPic, String imageUrl) {
         Glide.with(authPic.getContext())
@@ -118,6 +124,7 @@ public class Post extends BaseObservable {
         this.postCommentsNum = postCommentsNum;
     }
 
+    @Bindable
     public String getPostImage() {
         return postImage;
     }
@@ -126,6 +133,7 @@ public class Post extends BaseObservable {
         this.postImage = postImage;
     }
 
+    @Bindable
     public String getPostDec() {
         return postDec;
     }
@@ -134,27 +142,61 @@ public class Post extends BaseObservable {
         this.postDec = postDec;
     }
 
-    public boolean isLike() {
-        return like;
-    }
-
-    public void setLike(boolean like) {
-        this.like = like;
-    }
-
-    public boolean isDislike() {
-        return dislike;
-    }
-
-    public void setDislike(boolean dislike) {
-        this.dislike = dislike;
-    }
-
     public boolean isHasImage() {
         return hasImage;
     }
 
     public void setHasImage(boolean hasImage) {
         this.hasImage = hasImage;
+    }
+
+    @Bindable
+    public int getLike() {
+        return like;
+    }
+
+    public void setLike(int like) {
+        this.like = like;
+    }
+
+    public int getDislike() {
+        return dislike;
+    }
+
+    @Bindable
+    public void setDislike(int dislike) {
+        this.dislike = dislike;
+    }
+
+    public boolean isLiked() {
+        return liked;
+    }
+
+    public void setLiked(boolean liked) {
+        this.liked = liked;
+    }
+
+    public boolean isDisliked() {
+        return disliked;
+    }
+
+    public void setDisliked(boolean disliked) {
+        this.disliked = disliked;
+    }
+
+    public List<String> getLikes_list() {
+        return likes_list;
+    }
+
+    public void setLikes_list(List<String> likes_list) {
+        this.likes_list = likes_list;
+    }
+
+    public List<String> getDislikes_list() {
+        return dislikes_list;
+    }
+
+    public void setDislikes_list(List<String> dislikes_list) {
+        this.dislikes_list = dislikes_list;
     }
 }

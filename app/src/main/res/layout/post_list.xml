@@ -98,6 +98,7 @@
                     tool:text="Inspired by the Samurai spirit, this mix will lead you through the ancient stories, feel the power of the katana as traditional Japanese instruments harmonize with modern beats, creating an epic fusion of past and present. "
                     />
                 <ImageView
+                    android:id="@+id/post_image"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
