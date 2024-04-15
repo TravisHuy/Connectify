@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/bottom_navigation_home"
+        android:icon="@drawable/pager"
+        android:title=""
+        />
+    <item android:id="@+id/bottom_navigation_add"
+        android:icon="@drawable/add"
+        android:title=""
+        />
+    <item android:id="@+id/bottom_navigation_chat"
+        android:icon="@drawable/chatbubbles"
+        android:title=""
+        />
+</menu>

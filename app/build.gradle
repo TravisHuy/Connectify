@@ -9,14 +9,16 @@ android {
 
     defaultConfig {
         applicationId "com.nhathuy.connectify"
-        minSdk 21
+        minSdk 23
         targetSdk 33
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    dataBinding {
+        enabled = true
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -46,7 +48,7 @@ dependencies {
 
     //library
     implementation 'com.airbnb.android:lottie:3.4.0'
-
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
     implementation 'io.github.florent37:shapeofview:1.4.7'
     implementation 'com.mikepenz:materialdrawer:9.0.1'
     implementation 'com.github.amirdew:JSON:v1.0.0'
@@ -65,6 +67,8 @@ dependencies {
     implementation "androidx.emoji2:emoji2-views:$emojiVersion"
     implementation "androidx.emoji2:emoji2-bundled:$emojiVersion"
 
+
+    implementation 'androidx.palette:palette:1.0.0'
     implementation 'com.github.stfalcon-studio:StfalconImageViewer:v1.0.1'
     implementation 'com.github.bumptech.glide:glide:4.16.0'
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
