@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tool="http://schemas.android.com/tools"
-    xmlns:tools="http://schemas.android.com/tools">
+    >
 
 
 
@@ -12,6 +10,9 @@
             type="com.nhathuy.connectify.model.Post" />
     </data>
     <com.google.android.material.card.MaterialCardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tool="http://schemas.android.com/tools"
+        xmlns:tools="http://schemas.android.com/tools"
         android:id="@+id/post_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -49,7 +50,7 @@
                         android:layout_height="wrap_content"
                         android:contentDescription="@string/image_des"
                         android:scaleType="fitCenter"
-                        app:postAuthorImage="@{post.postAuthImage}"
+                        app:postAuthImage="@{post.postAuthImage}"
                         />
 
                 </io.github.florent37.shapeofview.shapes.CircleView>
@@ -108,10 +109,11 @@
                     app:postImage="@{post.postImage}"
                     tools:srcCompat="@tools:sample/avatars"
                     />
+
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/post"
+                    android:id="@+id/post_container"
                     >
 
                     <LinearLayout

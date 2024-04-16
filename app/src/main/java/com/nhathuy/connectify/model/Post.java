@@ -42,6 +42,7 @@ public class Post extends BaseObservable {
     private List<String> likes_list;
     private List<String> dislikes_list;
 
+    @BindingAdapter("postAuthImage")
     public static void loadPostAuthImage(ImageView authPic, String imageUrl) {
         Glide.with(authPic.getContext())
                 .load(imageUrl)

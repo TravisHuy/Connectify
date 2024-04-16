@@ -27,12 +27,12 @@
             android:layout_height="match_parent"
             app:titleTextColor="@color/colorPrimaryDark"
             android:background="?attr/backgroundColor"
-            app:layout_scrollFlags="scroll||enterAlways|snap"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
             />
     </com.google.android.material.appbar.AppBarLayout>
 
     <ProgressBar
-        android:id="@+id/progess"
+        android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -51,31 +51,34 @@
         android:orientation="horizontal"
         app:layout_behavior="com.google.android.material.behavior.HideBottomViewOnScrollBehavior"
         >
+
         <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/main_item_home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:bt_active="true"
-            app:bt_icon="@drawable/home"
             app:bt_colorActive="@color/colorAccent"
             app:bt_colorInactive="@color/colorAccentBlueDark_50"
-            app:bt_title="Home"
-            />
+            app:bt_icon="@drawable/home"
+            app:bt_title="Home" />
+
         <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/main_item_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorInactive="@color/colorAccentBlueDark_50"
             app:bt_icon="@drawable/post"
-            app:bt_title="Post"
-            app:bt_active="true"
-            app:bt_colorInactive="@color/colorAccentBlueDark_50"
-            />
+            app:bt_title="Post" />
+
         <com.gauravk.bubblenavigation.BubbleToggleView
+            android:id="@+id/main_item_chat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:bt_icon="@drawable/chat"
-            app:bt_title="Chat"
             app:bt_active="true"
             app:bt_colorInactive="@color/colorAccentBlueDark_50"
-            />
+            app:bt_icon="@drawable/chat"
+            app:bt_title="Chat" />
 
     </com.gauravk.bubblenavigation.BubbleNavigationLinearView>
 
